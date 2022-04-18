@@ -1,0 +1,92 @@
+aside {
+    width: 100%;
+    .login {
+        display: none;
+        @include desktop-small {
+            display: block;
+        }
+    }
+    form:first-of-type {
+        margin-bottom: 1em;
+        @include desktop-small {
+            margin-bottom: 1.5em;
+        }
+    }
+    .box {
+        h3, blockquote {
+            padding-bottom: 1em;
+            border-bottom: 1px solid rgba(black, .05);
+        }
+        h3 {
+            color: $gray-dark;
+        }
+        ul {
+            li {
+                padding: .6em 0;
+                border-top: 1px solid rgba(black, .05);
+                &:first-child {
+                    border: none;
+                    padding-top: 0;
+                }
+            }
+        }
+        blockquote {
+            background: url('img/svg/quote.svg') no-repeat center;
+            background-size: 3em 3em;
+            padding: 1.5em 1em;
+            text-align: center;
+            @include tablet {
+                background-size: 5em 5em;
+            }
+        }
+        &-gray-dark {
+            position: relative;
+            h3 {
+                color: white;
+                border-color: rgba(white, .1);
+            }
+            p {
+                color: $gray-medium;
+                font-weight: 700;
+                margin-bottom: 1.5em;
+            }
+            input[type="email"] {
+                padding-right: 4em;
+                margin-bottom: 0;
+                border-color: white;
+                border-width: 1px;
+                &::placeholder {
+                    color: white;
+                }
+            }
+            button {
+                position: absolute;
+                bottom: calc(1em + .5em);
+                right: calc(1em + .5em);
+                border-radius: 50px;
+                @include tablet {
+                    bottom: calc(1.5em + .5em);
+                    right: calc(1.5em + 1em);
+                }
+                i {
+                    padding: 1.2em;
+                }
+            }
+        }
+        &.aside-image {
+            text-align: center;
+            h3 {
+                text-align: left;
+            }
+        }
+        &.aside-blockquote {
+            text-align: right;
+            a {
+                max-width: 50%;
+            }
+            small {
+                text-decoration: underline;
+            }
+        }
+    }
+}

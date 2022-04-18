@@ -1,0 +1,18 @@
+.social-icons {
+    @include flex;
+    li {
+        margin: 0 .7em;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        @include phone-big {
+            margin: 0 .9em;
+        }
+        @include tablet {
+            margin: 0 1em;
+        }
+    }
+}

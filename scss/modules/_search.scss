@@ -1,0 +1,126 @@
+.search {
+    display: none;
+    position: fixed;
+    top: 3em;
+    left: 50%;
+    width: 80vw;
+    margin-left: -40vw;
+    z-index: 6;
+    @include tablet {
+        display: block !important;
+        max-width: 20em;
+        position: relative;
+        top: initial;
+        left: initial;
+        margin-left: 2em;
+        z-index: 3;
+    }
+    @include desktop {
+        max-width: 17em;
+    }
+    @include desktop-big {
+        max-width: 24em;
+    }
+    form {
+        position: relative;
+        input {
+            padding-right: 6.5em;
+            margin-bottom: 0;
+            color: $gray-dark;
+        }
+        i, button {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        i {
+            top: 50%;
+            right: 3.5em;
+            margin-top: -.9em;
+            @include opacity(0);
+        }
+        button {
+            top: 50%;
+            right: .5em;
+            margin-top: -1.2em;
+            @include icon(1.2em, 1.2em, 'img/svg/search_white.svg');
+            padding: 1.2em;
+            background-color: $primary-color;
+            @include rounded(50%);
+        }
+    }
+    ul {
+        display: none;
+        position: absolute;
+        top: 3.1em;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid rgba(0,0,0,.1);
+        background: white;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        li {
+            padding: 1em 2em 1em 3.5em;
+            background-image: url('img/svg/file.svg');
+            background-repeat: no-repeat;
+            background-position: 1.2em 1.2em;
+            background-size: 1.3em 1.3em;
+            &:hover {
+                background-color: rgba(0,0,0,.05);
+            }
+        }
+        a {
+            margin-bottom: 0.25em;
+            @include desktop-small {
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+        span {
+            display: inline-block;
+            line-height: 1.3;
+            a {
+                margin-bottom: 0;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    &-close {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        @include tablet {
+            display: none !important;
+        }
+        a {
+            position: absolute;
+            padding: 0.8em;
+            top: 1em;
+            right: 1em;
+            background-color: white;
+            background-size: .7em .7em;
+            border-radius: 50px;
+            opacity: .5;
+        }
+    }
+    // js
+    &.active {
+        input {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        i {
+            @include opacity(1);
+        }
+        ul {
+            display: block;
+        }
+    }
+}

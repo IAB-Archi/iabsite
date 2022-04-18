@@ -1,0 +1,28 @@
+.banner {
+    position: relative;
+    margin-bottom: 1em;
+    @include tablet {
+        margin-bottom: 2em;
+    }
+    @include desktop-small {
+        margin-bottom: 3em;
+    }
+    &-button-prev,
+    &-button-next {
+        position: absolute;
+        top: 50%;
+        margin-top: -1em;
+        @include icon(.75em, .75em, 'img/svg/arrow_right_white.svg');
+        padding: 1em;
+        background-color: $gray-dark;
+        border-radius: 50px;
+        z-index: 2;
+        left: 1em;
+        @include rotate(-180deg);
+    }
+    &-button-next {
+        left: initial;
+        right: 1em;
+        @include rotate(0deg);
+    }
+}

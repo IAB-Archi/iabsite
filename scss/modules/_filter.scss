@@ -1,0 +1,42 @@
+.filter {
+    background: $gray-light;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    @include phone {
+        margin-bottom: 1.5em;
+    }
+    @include tablet {
+        padding: 1.5em;
+    }
+    @include desktop-small {
+        padding: 2em;
+        margin-bottom: 2em;
+    }
+    @include desktop-small {
+        margin-bottom: 3em;
+    }
+    .flex {
+        justify-content: space-between;
+        &:last-of-type {
+            margin-top: 1em;
+            justify-content: space-between;
+            align-items: center;
+            a {
+                &:before {
+                    content: '';
+                    @include icon(.6em, .6em, 'img/svg/close.svg');
+                    margin-right: 1em;
+                    vertical-align: baseline;
+                }
+            }
+        }
+    }
+    .col {
+        @include flex-width(100%);
+        @include tablet {
+            @include flex-width(49%);
+            margin-top: .5em;
+        }
+    }
+}

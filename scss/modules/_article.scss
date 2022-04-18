@@ -1,0 +1,112 @@
+article {
+    position: relative;
+    margin: 1em 0;
+    @include phone {
+        margin: 1.5em 0;
+    }
+    @include phone-big {
+        margin: 2em 0;
+    }
+    @include desktop-small {
+        margin: 3em 0;
+    }
+    h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, em {
+        margin-bottom: 20px;
+        @include tablet {
+            margin-bottom: 30px;
+        }
+    }
+    p, ul, ol, blockquote, em {
+        @include phone-big {
+            font-size: 110%;
+            margin-bottom: 1.5em;
+        }
+        @include desktop-small {
+            font-size: 120%;
+            margin-bottom: 2em;
+        }
+        p, a, ul, ol, blockquote, em {
+            font-size: 100%;
+        }
+    }
+    ul, ol {
+        padding-left: 1.5em;
+        @include desktop-small {
+            padding-left: 3em;
+        }
+    }
+    ol {
+        list-style-type: upper-roman;
+        list-style-position: inside;
+    }
+    blockquote {
+        padding: 1em;
+        @include phone {
+            padding: 0 1.5em;
+            font-size: 110%;
+        }
+        @include phone-big {
+            padding: 0 2em;
+            font-size: 130%;
+        }
+        @include tablet {
+            padding: 0 5em;
+            font-size: 150%;
+        }
+    }
+    &.short {
+        &:after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+            z-index: 2;
+        }
+    }
+    // share
+    .share {
+        @include desktop-big {
+            position: absolute;
+            top: 3em;
+            left: -12em;
+            transform: rotate(-90deg);
+            text-align: center;
+        }
+        h6 {
+            margin-bottom: 0.5em;
+            font-size: 80%;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: lighten(black, 80%);
+            @include desktop {
+                margin-bottom: 1em;
+            }
+        }
+        ul {
+            display: flex;
+            padding-left: 0;
+            margin-left: -.35em;
+            li {
+                margin: .25em .35em;
+                a {
+                    @include desktop-big {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.article-img {
+    display: block;
+    width: 100%;
+    margin: 2em 0 1.5em;
+    @include phone-big {
+        margin: 0;
+    }
+}

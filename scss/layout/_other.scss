@@ -1,0 +1,24 @@
+.page {
+    background: white;
+    padding-top: 8.3em;
+    padding-bottom: 1.5em;
+    @include phone-big {
+        padding-bottom: 2.5em;
+    }
+    @include desktop-small {
+        padding-top: 12em;
+        padding-bottom: 5em;
+    }
+    @include desktop {
+        padding-top: 13em;
+    }
+    &-home {
+        background: transparent;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.white {
+    background: white;
+}

@@ -1,0 +1,17 @@
+.box {
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    @include tablet {
+        padding: 1.5em 2em;
+    }
+    @include desktop-small {
+        margin-bottom: 1.5em;
+    }
+    &-gray {
+        background: $gray-light;
+        &-dark {
+            background: $gray-dark;
+        }
+    }
+}

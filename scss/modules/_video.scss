@@ -1,0 +1,37 @@
+.video_articles {
+    width: 100%;
+    @include phone-big {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    li {
+        @include phone-big {
+            width: 48%;
+        }
+        @include tablet {
+            width: 49%;
+        }
+        &:first-child {
+            @include desktop-small {
+                width: 64%;
+            }
+        }
+        &:last-child {
+            @include desktop-small {
+                width: 32%;
+            }
+
+        }
+        li {
+            @include phone-big {
+                width: 100%;
+            }
+            &:first-child,
+            &:last-child {
+                width: 100%;
+            }
+        }
+    }
+}

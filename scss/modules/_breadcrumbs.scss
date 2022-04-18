@@ -1,0 +1,37 @@
+.breadcrumbs {
+    @include flex;
+    margin-left: -.5em;
+    margin-bottom: 1em;
+    @include phone {
+        margin-bottom: 1.5em;
+    }
+    @include phone-big {
+        margin-bottom: 2em;
+    }
+    @include desktop-small {
+        margin-bottom: 3em;
+    }
+    li {
+        margin: .1em .5em;
+        &:after {
+            content: '';
+            position: relative;
+            @include icon(.6em, .6em, 'img/svg/arrow_right_black.svg');
+            margin-left: .5em;
+            right: -.35em;
+            opacity: .35;
+        }
+        &:last-child {
+            &:after {
+                display: none;
+            }
+            a {
+                text-decoration: none;
+                opacity: .35;
+            }
+        }
+        a {
+            text-decoration: underline;
+        }
+    }
+}

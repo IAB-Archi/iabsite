@@ -1,0 +1,67 @@
+%input {
+	display: block;
+	min-width: 100%;
+	width: 100%;
+	min-height: 2.25em;
+	margin-bottom: .5em;
+	border-style: none;
+	font-size: 0.938em; // 15px
+	background: white;
+	vertical-align: middle;
+	outline: 0;
+	@include rounded(5px);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="month"],
+textarea,
+select {
+	@extend %input;
+	padding: 1.03em 1.2em;
+	font-family: $sans;
+	font-weight: 700;
+	color: $gray-medium;
+	&::placeholder {
+		color: lighten($gray-medium, 15%);
+	}
+	&.outline {
+		border: 2px solid $primary-color;
+		color: white;
+		background: transparent;
+	}
+}
+
+textarea {
+	min-width: 100%;
+	min-height: 7em;
+	line-height: 1.4;
+}
+
+select {
+	min-width: 100%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+}
+
+input[type="file"] {
+	display: block;
+	max-width: 15em;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	@include phone {
+		max-width: initial;
+	}
+}

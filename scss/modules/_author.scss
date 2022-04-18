@@ -1,0 +1,49 @@
+.author {
+    border-bottom: 1px solid rgba(black, .1);
+    padding: 0 0 1em;
+    margin-bottom: 2em;
+    @include tablet {
+        border-color: transparent;
+    }
+    .flex {
+        width: 100%;
+        align-items: center;
+    }
+    &-img {
+        position: relative;
+        margin: 1em 1.5em 1em 0;
+        @include phone-big {
+            margin-right: 2em;
+        }
+        @include desktop-small {
+            margin-right: 3em;
+        }
+        img {
+            max-width: 115px;
+            border-radius: 115px;
+        }
+        a:last-child {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            @include icon(1em, 1em, 'img/svg/linkedin_blue.svg');
+            background-color: white;
+            padding: 1em;
+            border-radius: 50px;
+        }
+    }
+    &-name {
+        * {
+            color: $gray-dark;
+        }
+        h3 {
+            margin-bottom: 0.25em;
+        }
+        small {
+            font-size: 95%;
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}

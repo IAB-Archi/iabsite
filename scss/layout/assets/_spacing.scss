@@ -1,0 +1,43 @@
+// Vertical
+
+.v-padding-xs {
+	@include VPadding(.5em);
+}
+
+.v-padding-s {
+	@include VPadding(1em);
+}
+
+.v-padding-m {
+	@include VPadding(2em);
+}
+
+.v-padding-l {
+	@include VPadding(3em);
+}
+
+.v-padding-xl {
+	@include VPadding(4em);
+}
+
+// Horizontal
+
+.h-padding-xs {
+	@include HPadding(1em);
+}
+
+.h-padding-s {
+	@include HPadding(2em);
+}
+
+.h-padding-m {
+	@include HPadding(3em);
+}
+
+.h-padding-l {
+	@include HPadding(4em);
+}
+
+.h-padding-xl {
+	@include HPadding(5em);
+}

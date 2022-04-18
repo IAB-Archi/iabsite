@@ -1,0 +1,61 @@
+%button {
+	padding: .7em 1.7em;
+	border: 2px solid transparent;
+	font-weight: 800;
+	font-size: 100%;
+	text-transform: capitalize;
+	vertical-align: baseline;
+	white-space: nowrap;
+	background: $primary-color;
+	color: white;
+	@include rounded(5px);
+	cursor: pointer;
+	outline: 0;
+}
+
+input[type="submit"],
+button,
+.btn {
+	@extend %button;
+	&.with-icon {
+		padding: 0;
+		border: 0;
+		border-radius: 0;
+	}
+}
+
+.btn {
+	&-outline {
+		font-weight: 700;
+		background: transparent;
+		border-color: $gray-medium;
+		color: $gray-medium;
+	}
+	&-white {
+		font-weight: 700;
+		color: $primary-color;
+		background: white;
+	}
+}
+
+.link {
+	font-weight: 700;
+	font-size: 100%;
+	vertical-align: baseline;
+	white-space: nowrap;
+	color: $primary-color;
+	cursor: pointer;
+	outline: 0;
+	&:after {
+		content: "";
+		@include icon(.7em, .7em, 'img/svg/arrow_right_red.svg');
+		margin-left: .75em;
+		vertical-align: baseline;
+	}
+	&-white {
+		color: white;
+		&:after {
+			@include icon(.7em, .7em, 'img/svg/arrow_right_white.svg');
+		}
+	}
+}

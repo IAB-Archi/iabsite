@@ -1,0 +1,89 @@
+.title {
+    margin-bottom: 1em;
+    @include tablet {
+        margin-bottom: 2em;
+    }
+    @include desktop-small {
+        margin-bottom: 3em;
+    }
+    h1 {
+        margin-bottom: 0;
+    }
+    &-details {
+        display: block;
+        margin-top: 1em;
+        @include tablet {
+            margin-top: 1.5em;
+        }
+        @include desktop-small {
+            font-size: 110%;
+        }
+    }
+    .flex {
+        padding-bottom: 1.5em;
+        border-bottom: 1px solid rgba(white, .1);
+        justify-content: space-between;
+        align-items: center;
+        @include desktop-small {
+            padding-bottom: 2em;
+        }
+        .flex {
+            padding-bottom: 0;
+            border: 0;
+        }
+        .col {
+            &:first-child {
+                @include phone-big {
+                    @include flex-width(70%);
+                }
+            }
+        }
+        h2 {
+            position: relative;
+            line-height: 1.3;
+            color: white;
+            @include tablet {
+                padding-left: 2.7em;
+            }
+            &:after {
+                @include tablet {
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -1em;
+                    left: 0;
+                    content: '';
+                    @include icon(2em, 2em, 'img/svg/logo_white.svg');
+                }
+            }
+            &:first-child {
+                @include phone-big {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .btn {
+            color: white;
+            border-color: white;
+        }
+    }
+}
+
+.white {
+    .title {
+        .flex {
+            border-color: rgba(black, .1);
+            h2 {
+                color: black;
+                &:after {
+                    @include tablet {
+                        @include icon(2em, 2em, 'img/svg/logo_black.svg');
+                    }
+                }
+            }
+            .btn {
+                color: inherit;
+                border-color: inherit;
+            }
+        }
+    }
+}

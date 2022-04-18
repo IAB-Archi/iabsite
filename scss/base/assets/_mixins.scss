@@ -1,0 +1,134 @@
+@mixin desktop-enormous {
+    @media (min-width: #{$desktop-enormous}) {
+        @content;
+    }
+}
+
+@mixin desktop-huge {
+    @media (min-width: #{$desktop-huge}) {
+        @content;
+    }
+}
+
+@mixin desktop-big {
+    @media (min-width: #{$desktop-big}) {
+        @content;
+    }
+}
+
+@mixin desktop-inter {
+    @media (min-width: #{$desktop-intermediate}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin desktop-small {
+    @media (min-width: #{$desktop-small}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin phone-big {
+    @media (min-width: #{$phone-big}) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (min-width: #{$phone}) {
+        @content;
+    }
+}
+
+@mixin flex {
+    @extend %flex;
+}
+
+@mixin flex-width($flex-size) {
+	flex-basis: $flex-size;
+	max-width: $flex-size;
+	width: $flex-size;
+}
+
+@mixin bxz {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+}
+
+@mixin rounded($value) {
+	-webkit-border-radius: $value;
+	-moz-border-radius: $value;
+	border-radius: $value;
+}
+
+@mixin transition($type, $value) {
+	transition: $type $value;
+	-moz-transition: $type $value;
+	-webkit-transition: $type $value;
+	-o-transition: $type $value;
+	-webkit-transition-timing-function: ease;
+}
+
+@mixin rotate($value) {
+  -ms-transform: rotate($value); /* IE 9 */
+  -moz-transform: rotate($value); /* Firefox */
+  -webkit-transform: rotate($value); /* Safari and Chrome */
+  -o-transform: rotate($value); /* Opera */
+}
+
+@mixin icon ($width, $height, $path) {
+	display: inline-block;
+	width: $width;
+    height: $height;
+    vertical-align: middle;
+	background: url($path) no-repeat center;
+	background-size: $width $height;
+}
+
+@mixin VPadding($desktopValue) {
+    padding-top: 1 / 1.5 * $desktopValue;
+    padding-bottom: 1 / 1.5 * $desktopValue;
+    @include tablet {
+        padding-top: 1 / 1.3 * $desktopValue;
+        padding-bottom: 1 / 1.3 * $desktopValue;
+    }
+    @include desktop-small {
+        padding-top: 1 / 1.2 * $desktopValue;
+        padding-bottom: 1 / 1.2 * $desktopValue;
+    }
+    @include desktop {
+        padding-top: $desktopValue;
+        padding-bottom: $desktopValue;
+    }
+}
+
+@mixin HPadding($desktopValue) {
+    padding-left: 1 / 3 * $desktopValue;
+    padding-right: 1 / 3 * $desktopValue;
+    @include tablet {
+        padding-left: 1 / 2 * $desktopValue;
+        padding-right: 1 / 2 * $desktopValue;
+    }
+    @include desktop {
+        padding-left: $desktopValue;
+        padding-right: $desktopValue;
+    }
+}

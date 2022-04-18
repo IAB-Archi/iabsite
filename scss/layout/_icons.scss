@@ -1,0 +1,103 @@
+.icon {
+    &-facebook {
+        @include icon(1em, 1em, 'img/svg/facebook.svg');
+    }
+    &-facebook-circle {
+        @include icon(2em, 2em, 'img/svg/share_facebook.svg');
+        @include desktop-small {
+            background-size: 95%;
+        };
+    }
+    &-twitter {
+        @include icon(1em, 1em, 'img/svg/twitter.svg');
+    }
+    &-twitter-circle {
+        @include icon(2em, 2em, 'img/svg/share_twitter.svg');
+        @include desktop-small {
+            background-size: 95%;
+        };
+    }
+    &-linkedin {
+        @include icon(1em, 1em, 'img/svg/linkedin.svg');
+    }
+    &-linkedin-circle {
+        @include icon(2em, 2em, 'img/svg/share_linkedin.svg');
+        @include desktop-small {
+            background-size: 95%;
+        };
+    }
+    &-email-circle {
+        @include icon(2em, 2em, 'img/svg/share_mail.svg');
+        @include desktop-small {
+            background-size: 95%;
+        };
+    }
+    &-youtube {
+        @include icon(1em, 1em, 'img/svg/youtube.svg');
+    }
+    &-mail {
+        @include icon(1em, 1em, 'img/svg/mail.svg');
+    }
+    &-rss {
+        @include icon(1em, 1em, 'img/svg/rss.svg');
+    }
+    &-loading {
+        @include icon(1.8em, 1.8em, 'img/svg/loading.svg');
+        &.active {
+            -webkit-animation: rotating 2s linear infinite;
+            -moz-animation: rotating 2s linear infinite;
+            -ms-animation: rotating 2s linear infinite;
+            -o-animation: rotating 2s linear infinite;
+            animation: rotating 2s linear infinite;
+        }
+    }
+    &-user {
+        @include icon(1em, 1em, 'img/svg/user_white.svg');
+        &-red {
+            @include icon(1em, 1em, 'img/svg/user_red.svg');
+        }
+        &-black {
+            @include icon(1em, 1em, 'img/svg/user_black.svg');
+        }
+    }
+    &-search {
+        @include icon(1em, 1em, 'img/svg/search_black.svg');
+    }
+    &-check {
+        @include icon(1em, 1em, 'img/svg/check_white.svg');
+    }
+    &-close {
+        @include icon(1em, 1em, 'img/svg/close.svg');
+    }
+}
+
+//rotating
+
+@-webkit-keyframes rotating {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
