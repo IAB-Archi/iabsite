@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
+  <g id="share_facebook" transform="translate(-403 -1749)">
+    <path id="Icon_awesome-facebook-f" data-name="Icon awesome-facebook-f" d="M9.895,9.312l.46-3H7.48V4.372A1.5,1.5,0,0,1,9.169,2.753h1.307V.2A15.938,15.938,0,0,0,8.156,0,3.658,3.658,0,0,0,4.241,4.033V6.316H1.609v3H4.241v7.243H7.48V9.312Z" transform="translate(415.553 1759)" fill="#cecece"/>
+    <g id="Ellipse_5" data-name="Ellipse 5" transform="translate(403 1749)" fill="none" stroke="#cecece" stroke-width="2">
+      <circle cx="18.5" cy="18.5" r="18.5" stroke="none"/>
+      <circle cx="18.5" cy="18.5" r="17.5" fill="none"/>
+    </g>
+  </g>
+</svg>

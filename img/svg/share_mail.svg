@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
+  <g id="share_mail" transform="translate(-403 -1902)">
+    <path id="Icon_open-envelope-closed" data-name="Icon open-envelope-closed" d="M0,0V2.106L8.426,6.319l8.426-4.213V0ZM0,4.213v8.426H16.852V4.213L8.426,8.426Z" transform="translate(413 1914.002)" fill="#cecece"/>
+    <g id="Ellipse_8" data-name="Ellipse 8" transform="translate(403 1902)" fill="none" stroke="#cecece" stroke-width="2">
+      <circle cx="18.5" cy="18.5" r="18.5" stroke="none"/>
+      <circle cx="18.5" cy="18.5" r="17.5" fill="none"/>
+    </g>
+  </g>
+</svg>
