@@ -538,35 +538,47 @@ function vc_get_mautic_companies() {
 }
 
 function vc_process_company() {
-    $fp         = fopen('/home/stagingialia/public_html/users/info-emails-companies.txt', 'w');
+    //[DEV] - Getting the file path of the text needed and store it in variable.
+    $fp = fopen('/home/stagingialia/public_html/users/info-emails-companies.txt', 'w');
 
+    //[DEV] - Getting the array of companies and store it in variable.
     $array_companies    = vc_get_mautic_companies();
     $user_query         = new WP_User_Query( array( 'role' => 'Subscriber' ) );
     $authors            = $user_query->get_results();
     if ( ! empty( $authors ) ) {
-
+        
+        //Loop the user and store in variables. [DEV]
         foreach ( $authors as $key => $author ) {
+            
+            //[DEV] - This is the list of the user info and store them in variable
+            //[DEV] - User ID
             $author_info = get_userdata( $author->ID );
+            //[DEV] - User Email
             $email  = $author_info->user_email;
             $contact_mautic = vc_mautic_search_contacts_by_email_user( $email );
+            //[DEV] - Contact (Depends on what is the output of the first array inside the $contact_mautic)
             $mautic_id = array_keys($contact_mautic['contacts'])[0] ;
 
             $domain_name = substr(strrchr($email, "@"), 1);
 
+            //[DEV] - Update the user to member account in mautic by looping and getting information from the stored info from the variable above.
             if(in_array($email, $array_companies)){ // update user to member account
                 update_field('field_5ee86fdc8dde3', 'yes', 'user_'. $author->ID );
 
                 $user_data = array();
                 $user_data['member'] = 'yes';
 
+                //[DEV] - Connect to the mautic contacts api
                 $contactApi = vc_mautic_connection_contacts();
                 $id   = get_field('mautic_user_id', 'user_' . $author->ID);
                 $createIfNotFound = false;
                 $contact = $contactApi->edit($id, $user_data, $createIfNotFound);
 
+                //[DEV] - Output the user matic ID, email and domain
                 fwrite($fp, $key . 'User mautic : ' . $mautic_id . ' ' .  $email  . ' -> ' . $domain_name . PHP_EOL);
 
             } else {
+                 //[DEV] - Fallback conditions if the company is not found.
                  fwrite($fp, $key . 'User mautic : ' . $mautic_id . ' ' .  $email  . ' NOT FOUND COMPANY ' . $domain_name . PHP_EOL);
             }
 
@@ -577,6 +589,7 @@ function vc_process_company() {
     } else {
 
     }
+    //[DEV] - Close the connection
     fclose($fp);
 
 }
